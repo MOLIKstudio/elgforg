@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ELGFORG</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+      background-color: #ffffff;
+      color: #333;
+      font-size: 18px;
+    }
+
+    .top-bar {
+      background: #f5f5f5;
+      padding: 10px 30px;
+      text-align: right;
+      font-size: 16px;
+      color: #666;
+      border-bottom: 1px solid #ddd;
+    }
+
+    nav {
+      background: #000;
+      padding: 20px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 0 0 20px 20px;
+    }
+
+    .logo {
+      color: #fff;
+      font-size: 24px;
+      font-weight: bold;
+      margin-right: auto;
+    }
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 30px;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #bbb;
+    }
+
+    section {
+      padding: 60px 30px;
+      max-width: 1000px;
+      margin: auto;
+      border-radius: 20px;
+      background: #f9f9f9;
+      margin-top: 20px;
+    }
+
+    h2 {
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 10px;
+      color: #111;
+    }
+
+    footer {
+      background: #f0f0f0;
+      padding: 40px 20px;
+      text-align: center;
+      color: #555;
+      font-size: 16px;
+      border-top: 1px solid #ddd;
+      border-radius: 20px 20px 0 0;
+    }
+
+    .footer-contact {
+      margin-top: 10px;
+      line-height: 1.6;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="top-bar">
+    Tel: +386 40 123 456
+  </div>
+
+  <nav>
+    <div class="logo">ELGFORG</div>
+    <div class="nav-links">
+      <a href="#" onclick="showTab('onas')">O nas</a>
+      <a href="#" onclick="showTab('produkcija')">Produkcija</a>
+      <a href="#" onclick="showTab('kontakt')">Kontakt</a>
+    </div>
+  </nav>
+
+  <section id="onas">
+    <h2>O nas</h2>
+    <p>Smo ekipa strokovnjakov za osvetlitev. Naše poslanstvo je prinesti sodobno, varčno in kakovostno osvetlitev v vaš dom, pisarno ali trgovino.</p>
+  </section>
+
+  <section id="produkcija" class="hidden">
+    <h2>Produkcija</h2>
+    <p>Naši izdelki vključujejo različne rešitve za dom in pisarno. Vsak artikel je skrbno zasnovan in izdelan iz kakovostnih materialov. Ponujamo tudi storitve po meri.</p>
+  </section>
+
+  <section id="kontakt" class="hidden">
+    <h2>Kontakt</h2>
+    <p>Za povpraševanja ali sodelovanje nas kontaktirajte preko spodnjih podatkov ali kontaktnega obrazca (v pripravi).</p>
+  </section>
+
+  <footer>
+    <strong>Moje Podjetje d.o.o.</strong>
+    <div class="footer-contact">
+      Ulica primer 123, 1000 Ljubljana<br>
+      Email: info@mojepodjetje.si<br>
+      Telefon: +386 40 123 456
+    </div>
+  </footer>
+
+  <script>
+    function showTab(id) {
+      document.querySelectorAll('section').forEach(el => el.classList.add('hidden'));
+      document.getElementById(id).classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>
+

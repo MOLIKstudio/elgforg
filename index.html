@@ -10,30 +10,30 @@
       font-family: 'Helvetica Neue', sans-serif;
       background-color: #ffffff;
       color: #333;
-      font-size: 18px;
+      font-size: 20px;
     }
 
     .top-bar {
       background: #f5f5f5;
-      padding: 10px 30px;
+      padding: 15px 40px;
       text-align: right;
-      font-size: 16px;
+      font-size: 18px;
       color: #666;
       border-bottom: 1px solid #ddd;
     }
 
     nav {
       background: #000;
-      padding: 20px 30px;
+      padding: 25px 40px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-radius: 0 0 20px 20px;
+      border-radius: 0 0 25px 25px;
     }
 
     .logo {
       color: #fff;
-      font-size: 24px;
+      font-size: 28px;
       font-weight: bold;
       margin-right: auto;
     }
@@ -41,8 +41,9 @@
     .nav-links a {
       color: #fff;
       text-decoration: none;
-      margin-left: 30px;
+      margin-left: 40px;
       font-weight: 500;
+      font-size: 20px;
       transition: color 0.3s ease;
     }
 
@@ -51,33 +52,57 @@
     }
 
     section {
-      padding: 60px 30px;
+      padding: 80px 40px;
       max-width: 1000px;
       margin: auto;
-      border-radius: 20px;
+      border-radius: 25px;
       background: #f9f9f9;
-      margin-top: 20px;
+      margin-top: 30px;
     }
 
     h2 {
       border-bottom: 2px solid #ccc;
-      padding-bottom: 10px;
+      padding-bottom: 12px;
       color: #111;
+      font-size: 26px;
     }
 
     footer {
       background: #f0f0f0;
-      padding: 40px 20px;
+      padding: 50px 30px;
       text-align: center;
       color: #555;
-      font-size: 16px;
+      font-size: 18px;
       border-top: 1px solid #ddd;
-      border-radius: 20px 20px 0 0;
+      border-radius: 25px 25px 0 0;
     }
 
     .footer-contact {
-      margin-top: 10px;
-      line-height: 1.6;
+      margin-top: 20px;
+      line-height: 1.8;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+    }
+
+    .contact-icon {
+      width: 20px;
+      height: 20px;
+      background: #ccc;
+      border-radius: 50%;
+      display: inline-block;
+      text-align: center;
+      line-height: 20px;
+      font-weight: bold;
+      font-size: 14px;
     }
 
     .hidden {
@@ -87,7 +112,7 @@
 </head>
 <body>
   <div class="top-bar">
-    Tel: +386 40 123 456
+    Tel: +386 69 643 923
   </div>
 
   <nav>
@@ -106,7 +131,7 @@
 
   <section id="produkcija" class="hidden">
     <h2>Produkcija</h2>
-    <p>Naši izdelki vključujejo različne rešitve za dom in pisarno. Vsak artikel je skrbno zasnovan in izdelan iz kakovostnih materialov. Ponujamo tudi storitve po meri.</p>
+    <p>Kartice izdelkov so v postopku izdelave. Kmalu boste lahko prebrali več o naših rešitvah in ponudbi.</p>
   </section>
 
   <section id="kontakt" class="hidden">
@@ -115,11 +140,20 @@
   </section>
 
   <footer>
-    <strong>Moje Podjetje d.o.o.</strong>
+    <strong>ELGFORG</strong>
     <div class="footer-contact">
-      Ulica primer 123, 1000 Ljubljana<br>
-      Email: info@mojepodjetje.si<br>
-      Telefon: +386 40 123 456
+      <div class="contact-item" onclick="copyText('Cesta III 4, Velenje, 3320 Velenje')">
+        <span class="contact-icon">📍</span>
+        Cesta III 4, Velenje, 3320 Velenje
+      </div>
+      <div class="contact-item" onclick="copyText('+386 69 643 923')">
+        <span class="contact-icon">📞</span>
+        +386 69 643 923
+      </div>
+      <div class="contact-item" onclick="copyText('elgforg@gmail.com')">
+        <span class="contact-icon">✉️</span>
+        elgforg@gmail.com
+      </div>
     </div>
   </footer>
 
@@ -128,7 +162,12 @@
       document.querySelectorAll('section').forEach(el => el.classList.add('hidden'));
       document.getElementById(id).classList.remove('hidden');
     }
+
+    function copyText(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        alert("Skopirano: " + text);
+      });
+    }
   </script>
 </body>
 </html>
-
